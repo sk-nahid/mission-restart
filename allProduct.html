@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftCart - Products</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" />
+</head>
+
+<body class="bg-base-200">
+
+  <!-- Navbar -->
+  <div class="navbar bg-base-100 shadow-sm px-8">
+    <div class="flex-1">
+      <a class="text-2xl font-bold text-primary">SwiftCart</a>
+    </div>
+
+    <div class="hidden md:flex">
+      <ul class="menu menu-horizontal px-1 font-medium">
+        <li><a href="/">Home</a></li>
+        <li><a class="text-primary">Products</a></li>
+        <li><a>About</a></li>
+        <li><a>Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="flex-none">
+      <button class="btn btn-ghost btn-circle">
+        🛒
+      </button>
+    </div>
+  </div>
+
+  <!-- Page Header -->
+  <section class="text-center py-12">
+    <h1 class="text-4xl font-bold mb-6">Our Products</h1>
+
+    <!-- Category Filters -->
+    <div class="flex flex-wrap justify-center gap-3 " id="category-container">
+      
+    
+    </div>
+  </section>
+
+  <!-- Products Grid -->
+  <section class="px-6 md:px-20 pb-20">
+    <div id="allProductContainer" class="grid gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
+
+      <!-- Single Product Card -->
+      
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-neutral text-neutral-content px-10 py-12">
+    <div class="grid md:grid-cols-4 gap-10">
+
+      <div>
+        <h2 class="text-xl font-bold mb-4">SwiftCart</h2>
+        <p class="text-sm">
+          Your one-stop shop for fashion and lifestyle needs.
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">Quick Links</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a>Home</a></li>
+          <li><a>Products</a></li>
+          <li><a>About</a></li>
+          <li><a>Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">Support</h3>
+        <ul class="space-y-2 text-sm">
+          <li><a>FAQ</a></li>
+          <li><a>Shipping</a></li>
+          <li><a>Returns</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-semibold mb-3">Newsletter</h3>
+        <div class="flex gap-2">
+          <input type="email"
+                 placeholder="Enter your email"
+                 class="input input-bordered w-full text-black" />
+          <button class="btn btn-primary">Subscribe</button>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="text-center text-sm mt-10 border-t border-gray-600 pt-6">
+      © 2026 SwiftCart. All rights reserved.
+    </div>
+  </footer>
+<script src="javascript/index.js"></script>
+</body>
+</html>
