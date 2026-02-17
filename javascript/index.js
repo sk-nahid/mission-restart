@@ -1,33 +1,50 @@
 const products = () => {
     fetch('https://fakestoreapi.com/products')
         .then(res => res.json())
-        .then(product => displayAllProduct(product))
+        .then(product => {
+            displayAllProduct(product)
+        })
 }
 const productCategory = () => {
     fetch('https://fakestoreapi.com/products/categories')
         .then(res => res.json())
         .then(category => displayCategory(category))
 }
+const removeActive = () => {
+    const categoryBtn = document.querySelectorAll('.category-btn');
+    categoryBtn.forEach(btn => btn.classList.remove("btn-primary"))
+}
+
+
 
 const categoryProduct = (categoryName) => {
     console.log(categoryName)
     fetch(`https://fakestoreapi.com/products/category/${categoryName}`)
         .then(res => res.json())
-    .then(product => displayCategoryProducts(product))
+        .then(product => {
+            removeActive()
+            const clickedBtn = document.getElementById(`category-btn-${categoryName}`)
+            clickedBtn.classList.add('btn-primary')
+            console.log(clickedBtn)
+            displayCategoryProducts(product)
+        })
 }
 
 const displayCategory = (category) => {
     console.log(category)
+    
     const categoryContainer = document.getElementById('category-container')
-    categoryContainer.innerHTML = `<button class="btn btn-sm btn-primary" onclick="products()">All</button>`;
+    categoryContainer.innerHTML = `<button class="btn btn-sm btn-primary category-btn" onclick="products()">All</button>`;
     for (let cate of category) {
         const button = document.createElement('button');
-        button.className = "btn btn-sm btn-outline";
+        button.className = "btn btn-sm btn-outline category-btn";
+        button.id=`category-btn-${cate}`
         button.innerText = cate;
 
         button.addEventListener('click', () => {
             categoryProduct(cate);
         });
+
         categoryContainer.append(button)
     }
 }
@@ -126,5 +143,5 @@ const displayCategoryProducts = (products) => {
     }
 
 }
-
+products()
 productCategory()
